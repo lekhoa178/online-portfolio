@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lekhoa178.github.io/online-portfolio/sitemap.xml

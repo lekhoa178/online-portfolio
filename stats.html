@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi" data-design="arcade">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Portfolio insights | Khoa</title>
+  <link rel="icon" href="assets/images/logo/khoa-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/stats.css?v=8c90f0aada7d15db">
+  <script src="data/analytics-config.js?v=8c90f0aada7d15db" defer></script>
+  <script src="js/stats.js?v=8c90f0aada7d15db" type="module"></script>
+</head>
+<body>
+  <header class="stats-header"><a class="brand" href="./">khoa<span>.</span> <small>PORTFOLIO INSIGHTS</small></a><div><button id="logout" hidden>Khóa dashboard</button></div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">THE OTHER SIDE OF THE SCREEN</p><h1>Ai ghé qua.<br><em>Điều gì giữ họ lại.</em></h1></div><p>Một góc nhìn về những lượt ghé thăm,<br>các dự án được khám phá và tương tác<br>trên portfolio của bạn.</p></section>
+    <section id="login" class="login panel">
+      <div><span class="tag">CHỈ DÀNH CHO CHỦ WEBSITE</span><h2>Mở dashboard của bạn</h2><p>Dữ liệu được bảo vệ tại API. Khóa quản trị chỉ giữ trong bộ nhớ của tab, tự mất khi tải lại.</p></div>
+      <form id="login-form">
+        <label for="endpoint">URL của Cloudflare Worker</label><input id="endpoint" type="url" placeholder="https://khoa-portfolio-stats.…workers.dev" required autocomplete="url">
+        <label for="token">Khóa quản trị · ADMIN_TOKEN</label><input id="token" type="password" placeholder="Nhập ADMIN_TOKEN" required minlength="32" autocomplete="off" aria-describedby="token-help">
+        <p id="token-help" class="hint">Khóa Resend chỉ cấu hình tại Worker, không nhập vào dashboard.</p>
+        <div class="actions"><button class="primary" type="submit">Xem thống kê ↗</button><button id="demo" type="button">Xem dữ liệu mẫu</button></div>
+      </form>
+    </section>
+    <section class="panel browser-preference" aria-labelledby="browser-preference-title">
+      <div><h2 id="browser-preference-title">Bỏ qua những lần bạn tự ghé</h2><p class="hint">Áp dụng cho trình duyệt này trên cùng địa chỉ website, kể cả các tab đang mở. Dữ liệu đã ghi trước đó vẫn được giữ.</p></div>
+      <div><label class="exclude-control"><input type="checkbox" id="exclude-browser" aria-describedby="exclusion-status"> Loại trừ trình duyệt này</label><p id="exclusion-status" class="hint" role="status"></p></div>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <section id="dashboard" hidden>
+      <div id="demo-banner" class="notice" hidden><strong>CHẾ ĐỘ MẪU</strong> — Số liệu minh họa, không phải lượt truy cập thật. Không gửi email hoặc kết nối API.</div>
+      <div class="toolbar"><div><span class="live-dot"></span><span id="updated">Đang tải…</span></div><div class="actions"><label for="days">Khoảng thời gian</label><select id="days"><option value="1">Hôm nay</option><option value="7" selected>7 ngày</option><option value="30">30 ngày</option><option value="90">90 ngày</option></select><button id="refresh">Làm mới</button><button id="export">Xuất JSON</button></div></div>
+      <div id="metrics" class="metrics"></div>
+      <p id="visitor-coverage" class="notice"></p>
+      <div class="audience-grid">
+        <section class="panel trend"><div class="panel-heading"><div><p class="eyebrow">NHỊP GHÉ THĂM</p><h2>Mỗi ngày, bao nhiêu khách?</h2></div><span>Giờ Việt Nam · UTC+7</span></div>
+          <div class="chart-legend"><span class="legend-new">Khách mới</span><span class="legend-returning">Khách quay lại</span><span class="legend-sessions">Lượt ghé thăm</span></div>
+          <p class="hint">Hai màu cộng lại là khách duy nhất trong ngày. Cột nhạt là số phiên.</p>
+          <div id="daily" class="daily" role="group" aria-label="Biểu đồ khách và lượt ghé thăm theo ngày"></div>
+          <p id="daily-detail" class="chart-detail" aria-live="polite"></p>
+          <details><summary>Xem bảng số liệu theo ngày</summary><div id="daily-table" class="table-wrap"></div></details>
+        </section>
+        <section class="panel audience-mix"><p class="eyebrow">GƯƠNG MẶT MỚI, LẦN TRỞ LẠI</p><h2>Khách trong kỳ</h2><div id="visitor-mix"></div><p class="hint">Mỗi mã khách chỉ thuộc một nhóm trong kỳ. Khách quay lại đã xuất hiện trước ngày bắt đầu kỳ.</p></section>
+      </div>
+      <div class="grid">
+        <section class="panel"><p class="eyebrow">ĐƯỢC KHÁM PHÁ</p><h2>Trang đã xem</h2><div id="pages" class="table-wrap"></div></section>
+        <section class="panel"><p class="eyebrow">GIỮ SỰ CHÚ Ý</p><h2>Nội dung & thời gian đọc</h2><div id="content" class="rank-list"></div></section>
+        <section class="panel"><p class="eyebrow">TƯƠNG TÁC</p><h2>Đã click vào đâu</h2><div id="clicks" class="rank-list"></div></section>
+        <section class="panel"><p class="eyebrow">TỪ KHẮP NƠI</p><h2>Khu vực theo IP</h2><p class="hint">Đối chiếu Cloudflare và <a href="https://db-ip.com/" target="_blank" rel="noopener noreferrer">DB-IP</a> khi có dữ liệu. Nếu hai nguồn không khớp, thành phố được ghi là chưa xác định. IP vẫn có thể lệch ngay cả khi không dùng VPN.</p><div id="locations" class="rank-list"></div></section>
+        <section class="panel"><p class="eyebrow">ĐƯỜNG DẪN ĐẾN ĐÂY</p><h2>Nguồn truy cập</h2><div id="referrers" class="rank-list"></div></section>
+        <section class="panel"><p class="eyebrow">THIẾT BỊ & THÔNG BÁO</p><h2>Tình trạng hệ thống</h2><div id="devices" class="rank-list"></div><p id="mail-status" class="notice"></p><div id="mail-counts"></div></section>
+      </div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">TỪNG LƯỢT GHÉ THĂM</p><h2>Nhật ký truy cập</h2></div><span>Tối đa 100 phiên gần nhất</span></div><div id="sessions" class="table-wrap"></div></section>
+      <p class="footnote">Khách duy nhất được nhận diện bằng mã ngẫu nhiên trong trình duyệt, không phải danh tính người thật. Đổi thiết bị, xóa dữ liệu hoặc dùng ẩn danh có thể tạo khách mới. Mã hết hạn sau 90 ngày không ghi nhận truy cập. Unique cả kỳ được đếm riêng, không cộng unique từng ngày. Phiên cũ hoặc không lưu được mã khách vẫn tính lượt ghé thăm nhưng không nằm trong ba chỉ số khách. Một phiên kết thúc sau 30 phút không hoạt động hoặc tối đa 24 giờ. Thời gian đọc chỉ tính khi tab hiển thị, có focus và hoạt động trong 60 giây gần nhất (hoặc phát video). Tự cập nhật mỗi phút khi tab hiển thị.</p>
+    </section>
+  </main>
+  <footer><a href="./">← Về portfolio</a><span>STATIC FRONTEND · PRIVATE DATA · FREE TIER</span><a href="privacy.html">Quyền riêng tư</a></footer>
+  <dialog id="session-dialog" aria-labelledby="session-title"><form method="dialog"><button aria-label="Đóng chi tiết phiên">Đóng ×</button></form><p class="eyebrow">MỘT HÀNH TRÌNH</p><h2 id="session-title">Chi tiết phiên</h2><div id="session-detail"></div></dialog>
+</body>
+</html>

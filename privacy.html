@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">
+  <title>Privacy | Khoa</title>
+  <link rel="icon" href="assets/images/logo/khoa-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/stats.css?v=8c90f0aada7d15db">
+  <script src="js/privacy.js?v=8c90f0aada7d15db" defer></script>
+  <link rel="stylesheet" href="css/language.css?v=8c90f0aada7d15db">
+  <script src="js/language.js?v=8c90f0aada7d15db" defer></script>
+</head>
+<body>
+  <header class="stats-header"><a class="brand" href="./">khoa<span>.</span></a><a href="./">← Portfolio</a><button class="language-toggle" type="button" data-language-toggle translate="no" aria-label="Language: English. Switch to Vietnamese" title="English → Tiếng Việt" hidden>EN</button></header>
+  <main class="guide">
+    <p class="eyebrow">YOUR VISIT, YOUR CHOICE</p><h1>Privacy & analytics</h1>
+    <p>When analytics is configured, this site collects data for funnel analysis to understand the visitor journey and improve the portfolio experience. This page itself does not send analytics.</p>
+    <div class="panel"><h2>Your preference</h2><p id="privacy-status" role="status"></p><div class="actions"><button id="privacy-off" type="button">Turn analytics off</button><button id="privacy-on" type="button">Allow analytics</button></div><p class="hint">Your choice applies to this browser on this site. Do Not Track and Global Privacy Control take precedence. If browser storage is blocked, a preference cannot persist between pages.</p></div>
+    <h2>Funnel analytics</h2>
+    <p>A random visitor ID is saved in this browser to count unique, new and returning visitors. It expires after 90 days without a recorded visit. Visit records are kept for 90 days; visitor metadata is removed after 90 days of inactivity. Turning analytics off removes the ID from this browser.</p>
+    <p>A separate session ID groups visits within one tab, expiring after 30 minutes of inactivity or 24 hours maximum. Unique visitors represent browser IDs, not verified people. Different devices, private browsing or clearing storage can create a new ID. If storage is unavailable, visits remain unclassified instead of being counted as new visitors. The owner can exclude a browser from future collection in Portfolio insights.</p>
+    <p>Cloudflare supplies an approximate city, region and country based on the connection IP. At the start of a session, the server may send that IP to DB-IP over HTTPS to cross-check the region. Raw IP addresses are not stored in the analytics database, dashboard or notification email. Only approximate place names, the sources and whether they agree are saved. Device and browser families are recorded, together with the referring hostname; query strings, typed text, passwords and screen recordings are not collected.</p>
+    <h2>IP-based region only</h2>
+    <p>This site does not request GPS or browser location permission. IP location can show the wrong city even without a VPN and does not confirm where a visitor is physically located. If the two sources disagree, the city is left uncertain. If the additional service is unavailable or reaches its free limit, only the Cloudflare estimate is used and labelled as a single source.</p>
+    <h2>Who receives the information</h2>
+    <p>Lê Anh Khoa can view the statistics. Cloudflare Workers and D1 process/store analytics. <a href="https://db-ip.com/privacy.php" target="_blank" rel="noopener noreferrer">DB-IP</a> processes the connection IP when a cross-check is available. Resend sends a new-session notification to the owner with the approximate IP region, source agreement, device, entry page and referring hostname. These services have their own privacy and retention policies.</p>
+    <h2>Retention and control</h2>
+    <p>Visit records and daily visitor observations are scheduled for deletion after 90 days. A visitor ID and its first/last visit times are retained until 90 days without a recorded visit. Cleanup runs in small batches and can be delayed by provider limits or outages. Notification copies and providers’ operational records have separate retention. Turning analytics off or excluding a browser stops future collection; in-flight requests and previously saved records may still exist.</p>
+    <p>For questions or deletion requests, contact <a href="mailto:leanhkhoapl178@gmail.com">leanhkhoapl178@gmail.com</a>. If available, include the session reference below; without a reference the owner may be unable to identify anonymous records.</p>
+    <p id="privacy-session" class="notice"></p>
+    <p class="hint">Last updated: 23 October 2026.</p>
+  </main>
+  <footer><a href="./">← Back to portfolio</a><span>LÊ ANH KHOA</span></footer>
+</body>
+</html>

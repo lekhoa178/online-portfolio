@@ -1,0 +1,1 @@
+@media(hover:hover)and (pointer:fine)and (forced-colors:none){:root{scrollbar-color:var(--accent) var(--bg)}.viewer-thumbnails{scrollbar-color:inherit}}@media(forced-colors:active){:root,.viewer-thumbnails{scrollbar-color:auto;scrollbar-width:auto}}
