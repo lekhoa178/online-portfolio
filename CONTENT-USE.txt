@@ -1,0 +1,28 @@
+Portfolio content use — Lê Anh Khoa
+https://lekhoa178.github.io/online-portfolio/
+Updated: 28 October 2026
+
+Recruitment and discovery are welcome. You may browse the portfolio, download
+the CV, share project links, and use search engines or AI assistants to find,
+summarize and evaluate the published experience for recruitment. Keep the
+author, project attribution and source links with summaries you share.
+
+For original material owned by Lê Anh Khoa, permission is not granted to copy
+and republish this portfolio as another person's work, redistribute its artwork
+or assets as an asset pack or template, or collect it for AI training datasets.
+Please contact leanhkhoapl178@gmail.com to request permission for other reuse.
+This notice does not restrict uses permitted by applicable law.
+
+Commercial projects, collaborators' work, trademarks and third-party components
+remain the property of their respective owners. Their existing licenses and
+credits take precedence for their material. This notice does not claim rights
+over third-party work, general ideas, skills, or common interface patterns.
+
+Public availability and a downloadable preview are not an open-source or
+asset-redistribution license. The public repository contains the deployed
+website; private authoring files and original working assets are separate.
+
+Crawler controls are voluntary. Search and user-directed retrieval are allowed;
+selected training and bulk-dataset crawlers are disallowed in the hostname-root
+robots.txt. This does not prevent screenshots, manual copying, or bots that
+ignore these preferences, and does not remove previously collected material.

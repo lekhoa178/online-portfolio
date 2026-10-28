@@ -1,4 +1,19 @@
+# Serve this file at https://lekhoa178.github.io/robots.txt, even for a project site.
+# Scope opt-outs to this portfolio; other projects on the hostname are unaffected.
+# Search engines, link previews and user-directed AI research remain welcome.
+# These are crawler preferences, not access control or copy protection.
 User-agent: *
 Allow: /
 
+# Training and bulk-dataset crawlers with separate, documented controls.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Applebot-Extended
+Disallow: /online-portfolio/
+Disallow: /online-portfolio$
+
+# Google-Extended also controls Gemini grounding, so it remains allowed.
+# OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot,
+# Googlebot, Bingbot and Applebot use the default allow rule above.
 Sitemap: https://lekhoa178.github.io/online-portfolio/sitemap.xml
