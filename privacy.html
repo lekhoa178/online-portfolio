@@ -5,10 +5,10 @@
   <meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">
   <title>Privacy | Khoa</title>
   <link rel="icon" href="assets/images/logo/khoa-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/stats.css?v=a4700dfa8cb63ec0">
-  <script src="js/privacy.js?v=a4700dfa8cb63ec0" defer></script>
-  <link rel="stylesheet" href="css/language.css?v=a4700dfa8cb63ec0">
-  <script src="js/language.js?v=a4700dfa8cb63ec0" defer></script>
+  <link rel="stylesheet" href="css/stats.css?v=0810c48ddcdfbf92">
+  <script src="js/privacy.js?v=0810c48ddcdfbf92" defer></script>
+  <link rel="stylesheet" href="css/language.css?v=0810c48ddcdfbf92">
+  <script src="js/language.js?v=0810c48ddcdfbf92" defer></script>
 </head>
 <body>
   <header class="stats-header"><a class="brand" href="./">khoa<span>.</span></a><a href="./">← Portfolio</a><button class="language-toggle" type="button" data-language-toggle translate="no" aria-label="Language: English. Switch to Vietnamese" title="English → Tiếng Việt" hidden>EN</button></header>
@@ -20,6 +20,7 @@
     <p>A random visitor ID is saved in this browser to count unique, new and returning visitors. It expires after 90 days without a recorded visit. Visit records are kept for 90 days; visitor metadata is removed after 90 days of inactivity. Turning analytics off removes the ID from this browser.</p>
     <p>A separate session ID groups visits within one tab, expiring after 30 minutes of inactivity or 24 hours maximum. Unique visitors represent browser IDs, not verified people. Different devices, private browsing or clearing storage can create a new ID. If storage is unavailable, visits remain unclassified instead of being counted as new visitors. The owner can exclude a browser from future collection in Portfolio insights.</p>
     <p>Cloudflare supplies an approximate city, region and country based on the connection IP. At the start of a session, the server may send that IP to DB-IP over HTTPS to cross-check the region. Raw IP addresses are not stored in the analytics database, dashboard or notification email. Only approximate place names, the sources and whether they agree are saved. Device and browser families are recorded, together with the referring hostname; query strings, typed text, passwords and screen recordings are not collected.</p>
+    <p>The server also checks request User-Agent tokens, available Cloudflare bot signals, and official OpenAI or Perplexity bot IP ranges to label automated visits. Only the classification, fixed bot or category name, evidence type, verification outcome and observation time are stored. Raw IP addresses, full User-Agent strings and device fingerprints are not retained. Fetching official IP lists does not send visitor IPs to those providers. Unrecognized traffic is not treated as verified human traffic.</p>
     <h2>IP-based region only</h2>
     <p>This site does not request GPS or browser location permission. IP location can show the wrong city even without a VPN and does not confirm where a visitor is physically located. If the two sources disagree, the city is left uncertain. If the additional service is unavailable or reaches its free limit, only the Cloudflare estimate is used and labelled as a single source.</p>
     <h2>Who receives the information</h2>

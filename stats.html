@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <title>Portfolio insights | Khoa</title>
   <link rel="icon" href="assets/images/logo/khoa-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/stats.css?v=a4700dfa8cb63ec0">
-  <script src="data/analytics-config.js?v=a4700dfa8cb63ec0" defer></script>
-  <script src="js/stats.js?v=a4700dfa8cb63ec0" type="module"></script>
+  <link rel="stylesheet" href="css/stats.css?v=0810c48ddcdfbf92">
+  <script src="data/analytics-config.js?v=0810c48ddcdfbf92" defer></script>
+  <script src="js/stats.js?v=0810c48ddcdfbf92" type="module"></script>
 </head>
 <body>
   <header class="stats-header"><a class="brand" href="./">khoa<span>.</span> <small>PORTFOLIO INSIGHTS</small></a><div><button id="logout" hidden>Khóa dashboard</button></div></header>
@@ -42,7 +42,7 @@
           <p id="daily-detail" class="chart-detail" aria-live="polite"></p>
           <details><summary>Xem bảng số liệu theo ngày</summary><div id="daily-table" class="table-wrap"></div></details>
         </section>
-        <section class="panel audience-mix"><p class="eyebrow">GƯƠNG MẶT MỚI, LẦN TRỞ LẠI</p><h2>Khách trong kỳ</h2><div id="visitor-mix"></div><p class="hint">Mỗi mã khách chỉ thuộc một nhóm trong kỳ. Khách quay lại đã xuất hiện trước ngày bắt đầu kỳ.</p></section>
+        <section class="panel audience-mix"><p class="eyebrow">GƯƠNG MẶT MỚI, LẦN TRỞ LẠI</p><h2>Khách trong kỳ</h2><div id="visitor-mix"></div><p class="hint">Mỗi mã khách chỉ thuộc một nhóm trong kỳ. Từ phiên ghé thứ hai, khách được xếp vào nhóm quay lại, kể cả khi lần đầu cũng trong kỳ. Tải lại trang trong cùng phiên không tính là quay lại.</p></section>
       </div>
       <div class="grid">
         <section class="panel"><p class="eyebrow">ĐƯỢC KHÁM PHÁ</p><h2>Trang đã xem</h2><div id="pages" class="table-wrap"></div></section>
@@ -52,7 +52,14 @@
         <section class="panel"><p class="eyebrow">ĐƯỜNG DẪN ĐẾN ĐÂY</p><h2>Nguồn truy cập</h2><div id="referrers" class="rank-list"></div></section>
         <section class="panel"><p class="eyebrow">THIẾT BỊ & THÔNG BÁO</p><h2>Tình trạng hệ thống</h2><div id="devices" class="rank-list"></div><p id="mail-status" class="notice"></p><div id="mail-counts"></div></section>
       </div>
-      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">TỪNG LƯỢT GHÉ THĂM</p><h2>Nhật ký truy cập</h2></div><span>Tối đa 100 phiên gần nhất</span></div><div id="sessions" class="table-wrap"></div></section>
+      <section class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">TỪNG LƯỢT GHÉ THĂM</p><h2>Nhật ký truy cập</h2></div><span>Tối đa 100 phiên gần nhất</span></div>
+        <div class="actions traffic-controls"><label for="traffic-filter">Loại truy cập</label><select id="traffic-filter">
+          <option value="all">Tất cả</option><option value="verified">Bot / AI đã xác minh</option><option value="declared">Bot / AI tự khai báo</option><option value="suspected">Nghi tự động</option><option value="unknown">Chưa thấy dấu hiệu bot</option><option value="legacy">Chưa phân loại · dữ liệu cũ</option>
+        </select><span id="session-count" role="status"></span></div>
+        <p class="hint">Đã xác minh: IP khớp nguồn chính thức hoặc được Cloudflare xác nhận. Tự khai báo: chưa xác minh nguồn. Chưa thấy dấu hiệu bot không có nghĩa là người thật. Bộ lọc chỉ áp dụng cho bảng này; các tổng số phía trên vẫn bao gồm bot. Chỉ những lượt gửi dữ liệu thống kê mới có trong lịch sử.</p>
+        <div id="sessions" class="table-wrap"></div>
+      </section>
       <p class="footnote">Khách duy nhất được nhận diện bằng mã ngẫu nhiên trong trình duyệt, không phải danh tính người thật. Đổi thiết bị, xóa dữ liệu hoặc dùng ẩn danh có thể tạo khách mới. Mã hết hạn sau 90 ngày không ghi nhận truy cập. Unique cả kỳ được đếm riêng, không cộng unique từng ngày. Phiên cũ hoặc không lưu được mã khách vẫn tính lượt ghé thăm nhưng không nằm trong ba chỉ số khách. Một phiên kết thúc sau 30 phút không hoạt động hoặc tối đa 24 giờ. Thời gian đọc chỉ tính khi tab hiển thị, có focus và hoạt động trong 60 giây gần nhất (hoặc phát video). Tự cập nhật mỗi phút khi tab hiển thị.</p>
     </section>
   </main>
